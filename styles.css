@@ -1,0 +1,166 @@
+/* ---------- GLOBAL STYLES ---------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f9fafc;
+  color: #222;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  padding: 2rem 1rem;
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 50% 10%;
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  background: white;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.7s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+  color: #1e3a8a;
+}
+
+ol {
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+ul {
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* ---------- DEMO VIDEO SECTION ---------- */
+.video-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Fallback for when the demo video isn't added yet */
+.video-fallback {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #3b82f6;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  animation: pulse 2s infinite;
+}
+
+.video-fallback p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #111;
+  color: white;
+  border-top-left-radius: 50% 10%;
+  border-top-right-radius: 50% 10%;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 600px) {
+  header {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .btn {
+    width: 90%;
+  }
+
+  ol, ul {
+    padding-left: 1rem;
+  }
+}

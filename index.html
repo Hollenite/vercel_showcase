@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Fact Checker Extension</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>📰 News Fact Checker Extension</h1>
+    <p>Verify news authenticity directly from your browser!</p>
+  </header>
+
+  <main>
+    <!-- Download Section -->
+    <section class="download">
+      <h2>📦 Download the Extension</h2>
+      <p>Click below to download the extension ZIP file hosted on Google Drive:</p>
+      <a 
+        href="https://drive.google.com/file/d/1ykoY8XRyBxUcT7ltYXsxYg4AH81uj1zr/view?usp=sharing" 
+        class="btn" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Download from Google Drive
+      </a>
+    </section>
+
+    <!-- Install Steps Section -->
+    <section class="install">
+      <h2>🧭 How to Install</h2>
+      <ol>
+        <li>Click the <strong>Download</strong> button above to get the ZIP file from Google Drive.</li>
+        <li>Extract the <strong>extension.zip</strong> file to a folder.</li>
+        <li>Open your browser and go to <strong>chrome://extensions/</strong>.</li>
+        <li>Enable <strong>Developer mode</strong> (top right corner).</li>
+        <li>Click <strong>“Load unpacked”</strong> and select the extracted folder.</li>
+        <li>The News Fact Checker icon will appear in your toolbar!</li>
+      </ol>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <h2>⚙️ How It Works</h2>
+      <p>
+        This extension helps users verify the authenticity of online news using a combination of APIs:
+      </p>
+      <ul>
+        <li>✅ <strong>Google Fact Check API</strong> — checks claims and fact-check sources.</li>
+        <li>🎥 <strong>YouTube Data Captions API</strong> — analyzes captions of videos for misinformation.</li>
+        <li>🧠 <strong>AI Image Analyzer</strong> — detects if an image is AI-generated.</li>
+        <li>🌐 <strong>Google Custom Search JSON API</strong> — finds credible articles for comparison.</li>
+      </ul>
+      <p>
+        The extension highlights suspicious news articles and provides verified sources and context — 
+        helping you quickly separate fact from fiction.
+      </p>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="demo">
+      <h2>🎬 Demo Video</h2>
+      <p>Watch the extension in action:</p>
+
+      <div class="video-wrapper">
+        <video controls poster="poster.png">
+          <source src="demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="video-fallback">
+          <p>🎥 Demo video coming soon...</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with ❤️ for truth seekers | © 2025 News Fact Checker</p>
+    </footer>
+  </main>
+
+  <script>
+    // Hide fallback if the video loads successfully
+    const video = document.querySelector('video');
+    const fallback = document.querySelector('.video-fallback');
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        if (fallback) fallback.style.display = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
