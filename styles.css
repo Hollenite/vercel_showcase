@@ -1,83 +1,114 @@
-/* ---------- GLOBAL STYLES ---------- */
+/* ---------- GLOBAL LAYOUT ---------- */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: #f9fafc;
-  color: #222;
+  background: linear-gradient(180deg, #eef2ff, #f9fafc 60%);
+  color: #1e293b;
   text-align: center;
 }
 
+/* ---------- HEADER ---------- */
 header {
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #4f46e5, #3b82f6, #06b6d4);
   color: white;
-  padding: 2rem 1rem;
-  border-bottom-left-radius: 50% 10%;
-  border-bottom-right-radius: 50% 10%;
-  animation: fadeIn 1s ease;
+  padding: 3rem 1rem 2.5rem;
+  border-bottom-left-radius: 50% 8%;
+  border-bottom-right-radius: 50% 8%;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+  animation: fadeDown 1s ease-out;
 }
 
 h1 {
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
 }
 
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ---------- MAIN CONTENT ---------- */
 main {
-  padding: 2rem 1rem;
-  max-width: 800px;
+  padding: 2.5rem 1rem;
+  max-width: 900px;
   margin: auto;
 }
 
 /* ---------- SECTIONS ---------- */
 section {
-  background: white;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: slideUp 0.7s ease;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin: 2.5rem 0;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.8s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
 }
 
 h2 {
   color: #1e3a8a;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  position: relative;
 }
 
-ol {
-  text-align: left;
-  margin: 1rem auto;
-  max-width: 600px;
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
 }
 
-ul {
+/* ---------- LISTS ---------- */
+ol, ul {
   text-align: left;
   margin: 1rem auto;
-  max-width: 600px;
+  max-width: 650px;
+  line-height: 1.7;
+  color: #334155;
+  padding-left: 1.2rem;
 }
 
 /* ---------- BUTTON ---------- */
 .btn {
   display: inline-block;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  padding: 1rem 2rem;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
 }
 
 .btn:hover {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
 }
 
-/* ---------- DEMO VIDEO SECTION ---------- */
+/* ---------- DEMO VIDEO ---------- */
 .video-wrapper {
   position: relative;
   display: flex;
@@ -89,51 +120,53 @@ ul {
 .video-wrapper video {
   width: 100%;
   max-width: 720px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-wrapper video:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Fallback for when the demo video isn't added yet */
+/* ---------- FALLBACK MESSAGE ---------- */
 .video-fallback {
   position: absolute;
   background: rgba(255, 255, 255, 0.9);
   border: 2px dashed #3b82f6;
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
   animation: pulse 2s infinite;
 }
 
 .video-fallback p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #3b82f6;
   font-weight: 500;
 }
 
 /* ---------- FOOTER ---------- */
 footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  background: #111;
-  color: white;
-  border-top-left-radius: 50% 10%;
-  border-top-right-radius: 50% 10%;
+  margin-top: 4rem;
+  padding: 1.2rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  border-top-left-radius: 50% 8%;
+  border-top-right-radius: 50% 8%;
+  box-shadow: 0 -5px 20px rgba(15, 23, 42, 0.4);
 }
 
 /* ---------- ANIMATIONS ---------- */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
@@ -143,24 +176,31 @@ footer {
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   header {
-    font-size: 0.95rem;
+    padding: 2.5rem 1rem 2rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   section {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .btn {
     width: 90%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
   }
 
   ol, ul {
-    padding-left: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .video-fallback {
+    width: 85%;
+    padding: 1.2rem;
   }
 }
